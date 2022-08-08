@@ -16,17 +16,32 @@ string[] GetFirstArray(int count)
     }
     return firstarray;
 }
-void PrintArray(string[] firstarray)
+void PrintArray(string[] array)
 {
-    for (int i = 0; i < firstarray.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        Console.Write($"{firstarray[i]} ");
+        Console.Write($"{array[i]} ");
     }
 }
 
+void PrintSecondArray(string[] array)
+{
 
+    for (int i = 0; i < array.Length; i++)
+    {
+
+
+
+        string buffer = array[i];
+        if (buffer.Length <= 3)
+            Console.Write($"{array[i]} ");
+
+    }
+}
 
 Console.WriteLine("Введите размерность массива:");
 int count = int.Parse(Console.ReadLine());
 string[] array = GetFirstArray(count);
 PrintArray(array);
+Console.WriteLine();
+PrintSecondArray(array);
